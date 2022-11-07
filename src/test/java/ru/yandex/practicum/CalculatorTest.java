@@ -7,6 +7,7 @@ import static org.junit.Assert.*;
 
 @RunWith(Parameterized.class)
 public class CalculatorTest {
+    Calculator calculator = new Calculator();
 
     private final int firstNumber;
     private final int secondNumber;
@@ -22,14 +23,16 @@ public class CalculatorTest {
     public static Object[][] getSumData() {
         return new Object[][] {
                 {1, 9, 10},
-                {1, 0, 1}
+                {1, 0, 1},
+                {2, 5, 7},
+                {-1, 2, 1},
+                {435, 100, 535}
         };
     }
 
 
     @Test
     public void shouldBeSum(){
-        Calculator calculator = new Calculator();
         int actual = calculator.sum(firstNumber, secondNumber);
         assertEquals(expected, actual);
     }
